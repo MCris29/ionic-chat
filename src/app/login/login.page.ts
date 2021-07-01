@@ -58,7 +58,7 @@ export class LoginPage implements OnInit {
       (res) => {
         console.log(res);
         this.errorMessage = '';
-        this.navCtrl.navigateForward('/home');
+        this.navCtrl.navigateForward('/chat');
       },
       (err) => {
         this.errorMessage = err.message;
