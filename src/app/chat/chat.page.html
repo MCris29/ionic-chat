@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Chat </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="ios list-ios hydrated">
+    <ion-list-header class="ios hydrated"></ion-list-header>
+
+    <ion-item *ngFor="let booking of Bookings" class="user-list">
+      <ion-label>
+        <strong>{{booking.user}} dice:</strong>
+        <h5>{{booking.message}}</h5>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <form [formGroup]="bookingForm" (ngSubmit)="formSubmit()">
+      <ion-input
+        formControlName="user"
+        placeholder="Escribe tu nombre..."
+      ></ion-input>
+      <ion-input
+        formControlName="message"
+        placeholder="Escribe algo..."
+      ></ion-input>
+      <ion-button type="submit" color="primary" expand="block">
+        Enviar 
+        <ion-icon name="send"></ion-icon>
+      </ion-button>
+    </form>
+  </ion-toolbar>
+</ion-footer>
